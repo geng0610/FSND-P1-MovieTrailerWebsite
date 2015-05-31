@@ -10,3 +10,8 @@ MAJOR MODIFICATIONS
 - Use Javascript 'jquery.adaptive-backgrounds.js' to dynamically change image background colors.
 - Show a shorter snippet when a movie overview is too long
 
+RESOURCES
+Youtube v3 API Documentation
+The Movie DB API Documentation
+Stackoverflow for suggestions
+Adaptive Background JS Documentation @ http://briangonzalez.github.io/jquery.adaptive-backgrounds.js/
