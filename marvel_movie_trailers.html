@@ -1,0 +1,193 @@
+
+<head>
+    <meta charset="utf-8">
+    <title>Marvel Movies!</title>
+
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" charset="utf-8">
+        // Pause the video when the modal is closed
+        $(document).on('click', '.hanging-close, .modal-backdrop, .modal', function (event) {
+            // Remove the src so the player itself gets removed, as this is the only
+            // reliable way to ensure the video stops playing in IE
+            $("#trailer-video-container").empty();
+        });
+        // Start playing the video whenever the trailer modal is opened
+        $(document).on('click', '.movie-tile', function (event) {
+            var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
+            var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
+            $("#trailer-video-container").empty().append($("<iframe></iframe>", {
+              'id': 'trailer-video',
+              'type': 'text-html',
+              'src': sourceUrl,
+              'frameborder': 0
+            }));
+        });
+        // Animate in the movies when the page loads
+        $(document).ready(function () {
+          $('.movie-tile').hide().first().show("fast", function showNext() {
+            $(this).next("div").show("fast", showNext);
+          });
+        });
+    </script>
+</head>
+
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <!-- Trailer Video Modal -->
+    <div class="modal" id="trailer">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#" class="hanging-close" data-dismiss="modal" aria-hidden="true">
+            <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24"/>
+          </a>
+          <div class="scale-media" id="trailer-video-container">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Main Page Content -->
+    <div class="container">
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Marvel Movie Trailers</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container movie-tiles">
+      
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="8hYlB38asDY" data-toggle="modal" data-target="#trailer">
+    <div class='col-lg-12 poster-image-container'>
+      <img class = "poster-image" src="http://image.tmdb.org/t/p/original/s2IG9qXfhJYxIttKyroYFBsHwzQ.jpg" data-adaptive-background='1'>
+    </div>
+    <div class='col-lg-12'>
+      <h2 class="title">Iron Man</h2>
+      <h3>May 2, 2008</h3>
+      <p class = "storyline">After escaping from kidnappers using makeshift power armor, an ultra rich inventor and weapons maker turns his creation into a force for good by using it to fight crime. But his skills are stretched to the limit when he must face the evil Iron Monger.</p>
+    </div>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="xbqNb2PFKKA" data-toggle="modal" data-target="#trailer">
+    <div class='col-lg-12 poster-image-container'>
+      <img class = "poster-image" src="http://image.tmdb.org/t/p/original/qTghl3lO8PhmIxkf8eN5WQQefHI.jpg" data-adaptive-background='1'>
+    </div>
+    <div class='col-lg-12'>
+      <h2 class="title">The Incredible Hulk</h2>
+      <h3>June 13, 2008</h3>
+      <p class = "storyline">Scientist Bruce Banner scours the planet for an antidote to the unbridled force of rage within him: the Hulk. But when the military masterminds who dream of exploiting his powers force him back to civilization, he finds himself coming face to face with a new, deadly foe.</p>
+    </div>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="FNQowwwwYa0" data-toggle="modal" data-target="#trailer">
+    <div class='col-lg-12 poster-image-container'>
+      <img class = "poster-image" src="http://image.tmdb.org/t/p/original/1LoT5WsN4Lc1aR7A18ciSA1LoMy.jpg" data-adaptive-background='1'>
+    </div>
+    <div class='col-lg-12'>
+      <h2 class="title">Iron Man 2</h2>
+      <h3>May 7, 2010</h3>
+      <p class = "storyline">Now that his Super Hero secret has been revealed, Tony Stark's life is more intense than ever. Everyone wants in on the Iron Man technology, whether for power or profit... But for Ivan Vanko, it's revenge! Tony must once again suit up and face his most dangerous enemy yet, but not without a few n...</p>
+    </div>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="JOddp-nlNvQ" data-toggle="modal" data-target="#trailer">
+    <div class='col-lg-12 poster-image-container'>
+      <img class = "poster-image" src="http://image.tmdb.org/t/p/original/bIuOWTtyFPjsFDevqvF3QrD1aun.jpg" data-adaptive-background='1'>
+    </div>
+    <div class='col-lg-12'>
+      <h2 class="title">Thor</h2>
+      <h3>May 6, 2011</h3>
+      <p class = "storyline">Against his father Odin's will, The Mighty Thor -a powerful but arrogant warrior god -recklessly reignites an ancient war. Thor is cast down to Earth and forced to live among humans as punishment. Once here, Thor learns what it takes to be a true hero when the most dangerous villain of his world ...</p>
+    </div>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="JerVrbLldXw" data-toggle="modal" data-target="#trailer">
+    <div class='col-lg-12 poster-image-container'>
+      <img class = "poster-image" src="http://image.tmdb.org/t/p/original/sBZs1jSybBRBXDwcCR8IOyHLUMc.jpg" data-adaptive-background='1'>
+    </div>
+    <div class='col-lg-12'>
+      <h2 class="title">Captain America: The First Avenger</h2>
+      <h3>July 22, 2011</h3>
+      <p class = "storyline">Predominantly set during World War II, Steve Rogers is a sickly man from Brooklyn who's transformed into super-soldier Captain America to aid in the war effort. Rogers must stop the Red Skull – Adolf Hitler's ruthless head of weaponry, and the leader of an organization that intends to use a mys...</p>
+    </div>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="eOrNdBpGMv8" data-toggle="modal" data-target="#trailer">
+    <div class='col-lg-12 poster-image-container'>
+      <img class = "poster-image" src="http://image.tmdb.org/t/p/original/cezWGskPY5x7GaglTTRN4Fugfb8.jpg" data-adaptive-background='1'>
+    </div>
+    <div class='col-lg-12'>
+      <h2 class="title">Marvel's The Avengers</h2>
+      <h3>May 4, 2012</h3>
+      <p class = "storyline">When an unexpected enemy emerges and threatens global safety and security, Nick Fury, director of the international peacekeeping agency known as S.H.I.E.L.D., finds himself in need of a team to pull the world back from the brink of disaster. Spanning the globe, a daring recruitment effort begins!</p>
+    </div>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="Ke1Y3P9D0Bc" data-toggle="modal" data-target="#trailer">
+    <div class='col-lg-12 poster-image-container'>
+      <img class = "poster-image" src="http://image.tmdb.org/t/p/original/1Ilv6ryHUv6rt9zIsbSEJUmmbEi.jpg" data-adaptive-background='1'>
+    </div>
+    <div class='col-lg-12'>
+      <h2 class="title">Iron Man 3</h2>
+      <h3>May 3, 2013</h3>
+      <p class = "storyline">The brash-but-brilliant industrialist Tony Stark faces an enemy whose reach knows no bounds. When Stark finds his personal world destroyed at his enemy’s hands, he embarks on a harrowing quest to find those responsible. This journey, at every turn, will test his mettle. With his back against th...</p>
+    </div>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="npvJ9FTgZbM" data-toggle="modal" data-target="#trailer">
+    <div class='col-lg-12 poster-image-container'>
+      <img class = "poster-image" src="http://image.tmdb.org/t/p/original/aROh4ZwLfv9tmtOAsrnkYTbpujA.jpg" data-adaptive-background='1'>
+    </div>
+    <div class='col-lg-12'>
+      <h2 class="title">Thor: The Dark World</h2>
+      <h3>November 8, 2013</h3>
+      <p class = "storyline">Thor fights to restore order across the cosmos… but an ancient race led by the vengeful Malekith returns to plunge the universe back into darkness. Faced with an enemy that even Odin and Asgard cannot withstand, Thor must embark on his most perilous and personal journey yet, one that will reuni...</p>
+    </div>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="7SlILk2WMTI" data-toggle="modal" data-target="#trailer">
+    <div class='col-lg-12 poster-image-container'>
+      <img class = "poster-image" src="http://image.tmdb.org/t/p/original/5TQ6YDmymBpnF005OyoB7ohZps9.jpg" data-adaptive-background='1'>
+    </div>
+    <div class='col-lg-12'>
+      <h2 class="title">Captain America: The Winter Soldier</h2>
+      <h3>April 4, 2014</h3>
+      <p class = "storyline">After the cataclysmic events in New York with The Avengers, Steve Rogers, aka Captain America is living quietly in Washington, D.C. and trying to adjust to the modern world. But when a S.H.I.E.L.D. colleague comes under attack, Steve becomes embroiled in a web of intrigue that threatens to put th...</p>
+    </div>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="d96cjJhvlMA" data-toggle="modal" data-target="#trailer">
+    <div class='col-lg-12 poster-image-container'>
+      <img class = "poster-image" src="http://image.tmdb.org/t/p/original/9gm3lL8JMTTmc3W4BmNMCuRLdL8.jpg" data-adaptive-background='1'>
+    </div>
+    <div class='col-lg-12'>
+      <h2 class="title">Guardians of the Galaxy</h2>
+      <h3>August 1, 2014</h3>
+      <p class = "storyline">Light years from Earth, 26 years after being abducted, Peter Quill finds himself the prime target of a manhunt after discovering an orb wanted by Ronan the Accuser.</p>
+    </div>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="tmeOjFno6Do" data-toggle="modal" data-target="#trailer">
+    <div class='col-lg-12 poster-image-container'>
+      <img class = "poster-image" src="http://image.tmdb.org/t/p/original/t90Y3G8UGQp0f0DrP60wRu9gfrH.jpg" data-adaptive-background='1'>
+    </div>
+    <div class='col-lg-12'>
+      <h2 class="title">Avengers: Age of Ultron</h2>
+      <h3>May 1, 2015</h3>
+      <p class = "storyline">When Tony Stark tries to jumpstart a dormant peacekeeping program, things go awry and Earth’s Mightiest Heroes are put to the ultimate test as the fate of the planet hangs in the balance. As the villainous Ultron emerges, it is up to The Avengers to stop him from enacting his terrible plans, an...</p>
+    </div>
+</div>
+
+    </div>
+  </body>
+  <script src="js/jquery.adaptive-backgrounds.js"></script>
+  <script type="text/javascript" charset="utf-8">
+  </script>
+</html>
