@@ -75,8 +75,6 @@ main_page_content = '''
     </div>
   </body>
   <script src="js/jquery.adaptive-backgrounds.js"></script>
-  <script type="text/javascript" charset="utf-8">
-  </script>
 </html>
 '''
 
