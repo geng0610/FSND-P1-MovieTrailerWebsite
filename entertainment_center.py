@@ -1,10 +1,12 @@
-import media
-import fresh_tomatoes
+import media #used to create movies
+import fresh_tomatoes #udacity movie page generator
 
+
+#create an empty array to store all the movies
 movies = []
 
-iron_man = media.Movie("Iron Man", "May 2, 2008")
-movies.append(iron_man)
+iron_man = media.Movie("Iron Man", "May 2, 2008") #create a new movie
+movies.append(iron_man) #add the movie to Movies
 
 the_incredible_hulk = media.Movie("The Incredible Hulk", "June 13, 2008")
 movies.append(the_incredible_hulk)
@@ -37,4 +39,4 @@ avengers_age_of_ultron = media.Movie("Avengers: Age of Ultron", "May 1, 2015")
 movies.append(avengers_age_of_ultron)
 
 
-fresh_tomatoes.open_movies_page(movies)
+fresh_tomatoes.open_movies_page(movies) #generate a new html using fresh tomatoes
